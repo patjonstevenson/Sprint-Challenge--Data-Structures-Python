@@ -17,30 +17,16 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # **** Run time ****
-# Original algorithm as runtime O(n^2)
+# Original algorithm's runtime: O(n^2)
+# BST runtime: O(nlogn)
 
-# Replace the nested for loops below with your improvements
+# ORIGINAL ALGORITHM USING NESTED FOR LOOPS
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
-# names = sorted(names_1 + names_2)
-# i = 0
-# while i < len(names)-1:
-#     if names[i] == names[i+1]:
-#         duplicates.append(names[i])
-#         i += 2
-#     else:
-#         i += 1
 
-# ll = LinkedList()
-
-# for name in names_1:
-#     ll.add_to_head(name)
-# for name in names_2:
-#     if ll.contains(name):
-#         duplicates.append(name)
-
+# MY ALGORITHM USING BINARY SEARCH TREE
 tree = BinarySearchTree(names_1[1])
 for name in names_1[1::]:
     tree.insert(name)
@@ -48,8 +34,6 @@ for name in names_1[1::]:
 for name in names_2:
     if tree.contains(name):
         duplicates.append(name)
-
-
 
 
 end_time = time.time()
@@ -61,6 +45,3 @@ print (f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
 
-# for name in names_1:
-#     if name in names_2:
-#         duplicates.append(name)
