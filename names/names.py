@@ -35,6 +35,11 @@ for name in names_2:
     if tree.contains(name):
         duplicates.append(name)
 
+# Stretch
+# for name in names_1:
+#     if name in names_2:
+#         duplicates.append(name)
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
